@@ -4,8 +4,9 @@ using System.Collections.Generic;
 
 public class Deck : MonoBehaviour {
 
-[Header("Set in Inspector")]
-	//Suits
+	[Header("Set in Inspector")]
+	public bool startFaceUp = false;
+    //Suits
 	public Sprite suitClub;
 	public Sprite suitDiamond;
 	public Sprite suitHeart;
@@ -38,8 +39,8 @@ public class Deck : MonoBehaviour {
 
 	// called by Prospector when it is ready
 	public void InitDeck(string deckXMLText) {
-		// from page 576
-		if( GameObject.Find("_Deck") == null) {
+		
+		if ( GameObject.Find("_Deck") == null) {
 			GameObject anchorGO = new GameObject("_Deck");
 			deckAnchor = anchorGO.transform;
 		}
@@ -173,7 +174,10 @@ public class Deck : MonoBehaviour {
 			}
 			
 			card.def = GetCardDefinitionByRank(card.rank);
-			
+			//AddPips(card);
+			//AddFace(card);
+			//return card;
+
 			// Add Decorators
 			foreach (Decorator deco in decorators) {
 				tGO = Instantiate(prefabSprite) as GameObject;
