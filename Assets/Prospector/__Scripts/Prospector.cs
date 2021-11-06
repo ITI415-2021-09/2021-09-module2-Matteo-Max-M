@@ -249,7 +249,7 @@ public class Prospector : MonoBehaviour
 	void MoveToDiscard(CardProspector cd)
 	{
 		// Set the state of the card to discard
-		cd.state = CardState.discard;
+		cd.state = eCardState.discard;
 		discardPile.Add(cd); // Add it to the discardPile List<>
 		cd.transform.parent = layoutAnchor; // Update its transform parent
 		cd.transform.localPosition = new Vector3(
