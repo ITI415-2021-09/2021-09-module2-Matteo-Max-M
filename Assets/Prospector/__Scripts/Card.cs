@@ -36,6 +36,11 @@ public class Card : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	virtual public void OnMouseUpAsButton()
+	{
+		print(name); // When clicked, this outputs the card name
+	}
 } // class Card
 
 [System.Serializable]
